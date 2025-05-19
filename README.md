@@ -80,3 +80,13 @@ Show an user by id.
 
 ### Dev mode
 ```npm run dev```
+
+# TP API Albums & Photos
+
+API REST développée avec **Express.js** et **Mongoose** permettant de gérer des albums et des photos, avec relations entre les deux.
+
+## Lancer le projet
+
+```bash
+npm install
+npm start
