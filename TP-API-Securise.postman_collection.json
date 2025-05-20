@@ -1,0 +1,211 @@
+{
+  "info": {
+    "name": "TP API Albums & Photos \u2014 S\u00e9curis\u00e9",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "\ud83d\udd10 Login (auth)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "https://localhost:3000/api/auth/login",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\": \"admin\", \"password\": \"password\"}"
+        }
+      }
+    },
+    {
+      "name": "\ud83d\udcc0 Voir tous les albums",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{token}}"
+          }
+        ],
+        "url": {
+          "raw": "https://localhost:3000/api/routes/albums",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "routes",
+            "albums"
+          ]
+        }
+      }
+    },
+    {
+      "name": "\ud83d\udcc0 Voir un album par ID",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{token}}"
+          }
+        ],
+        "url": {
+          "raw": "https://localhost:3000/api/routes/album/:id",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "routes",
+            "album",
+            ":id"
+          ]
+        }
+      }
+    },
+    {
+      "name": "\ud83d\udcc0 Cr\u00e9er un album",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{token}}"
+          }
+        ],
+        "url": {
+          "raw": "https://localhost:3000/api/routes/album",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "routes",
+            "album"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"title\": \"Vacances\", \"description\": \"Photos de vacances\"}"
+        }
+      }
+    },
+    {
+      "name": "\ud83d\udcf8 Voir les photos d\u2019un album",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{token}}"
+          }
+        ],
+        "url": {
+          "raw": "https://localhost:3000/api/routes/album/:idalbum/photos",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "routes",
+            "album",
+            ":idalbum",
+            "photos"
+          ]
+        }
+      }
+    },
+    {
+      "name": "\ud83d\udcf8 Ajouter une photo dans un album",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "{{token}}"
+          }
+        ],
+        "url": {
+          "raw": "https://localhost:3000/api/routes/album/:idalbum/photo",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "routes",
+            "album",
+            ":idalbum",
+            "photo"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"title\": \"Plage\", \"url\": \"http://image.com/plage.jpg\"}"
+        }
+      }
+    },
+    {
+      "name": "\ud83d\udcf8 Supprimer une photo",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{token}}"
+          }
+        ],
+        "url": {
+          "raw": "https://localhost:3000/api/routes/album/:idalbum/photo/:idphotos",
+          "protocol": "https",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "routes",
+            "album",
+            ":idalbum",
+            "photo",
+            ":idphotos"
+          ]
+        }
+      }
+    }
+  ]
+}
